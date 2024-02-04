@@ -7,6 +7,10 @@ use Tests\TestCase;
 
 class UserTest extends TestCase
 {
+    /**
+     * @return void
+     * @test
+     */
     public function insertData()
     {
         $data = User::factory()->make()->toArray();

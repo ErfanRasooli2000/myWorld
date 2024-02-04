@@ -170,6 +170,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         PostServiceProvider::class,
+        \Modules\User\providers\UserServiceProvider::class,
     ])->toArray(),
 
     /*
