@@ -1,6 +1,6 @@
 <?php
 
-namespace providers;
+namespace Modules\Post\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -11,8 +11,10 @@ class PostServiceProvider extends ServiceProvider
     {
         $this->app->register(PostRepositoryServiceProvider::class);
 
-        Route::prefix("/post")->group(__DIR__ . "/../Routes/api.php");
+        Route::prefix("/post")
+            ->middleware(["api"])
+            ->group(__DIR__ . "/../Routes/api.php");
 
-        $this->loadMigrationsFrom("./../Database/Migrations");
+        $this->loadMigrationsFrom(__DIR__ . "/../Database/Migrations");
     }
 }

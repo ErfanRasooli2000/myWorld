@@ -1,10 +1,10 @@
 <?php
 
-namespace providers;
+namespace Modules\Post\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use PostPatternInterface;
-use Repos\PostRepository;
+use Modules\Post\Database\Repositories\Contracts\PostPatternInterface;
+use Modules\Post\Database\Repositories\Repos\PostRepository;
 
 class PostRepositoryServiceProvider extends ServiceProvider
 {

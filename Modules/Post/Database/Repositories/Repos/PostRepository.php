@@ -1,6 +1,6 @@
 <?php
 
-namespace Repos;
+namespace Modules\Post\Database\Repositories\Repos;
 
 class PostRepository
 {
