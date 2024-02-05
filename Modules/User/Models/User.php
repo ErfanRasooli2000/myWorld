@@ -9,7 +9,17 @@ use Modules\User\Database\Factories\UserFactory;
 class User extends Model
 {
     use HasFactory;
-    protected $fillable = [];
+    protected $fillable = [
+        "name",
+        "mobile",
+        "password",
+        "is_active"
+    ];
+
+    protected $hidden = [
+        "password",
+        "remember_token",
+    ];
 
     public static function newFactory()
     {

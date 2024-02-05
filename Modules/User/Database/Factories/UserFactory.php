@@ -19,7 +19,10 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "name" => $this->faker->name,
+            "mobile" => fake()->unique()->regexify('/^09\d{9}$/'),
+            "is_active" => 1,
+            "password" => 123456,
         ];
     }
 }
