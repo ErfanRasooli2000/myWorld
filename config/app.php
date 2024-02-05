@@ -171,6 +171,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         PostServiceProvider::class,
         \Modules\User\providers\UserServiceProvider::class,
+        \Modules\Comment\providers\CommentServiceProvider::class,
     ])->toArray(),
 
     /*
