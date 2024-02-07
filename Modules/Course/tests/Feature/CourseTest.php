@@ -13,12 +13,12 @@ class CourseTest extends TestCase
      * @return void
      * @test
      */
-//    public function insert()
-//    {
-//        $data = Course::factory()->make()->toArray();
-//
-//        Course::create($data);
-//
-//        $this->assertDatabaseHas("posts" , $data);
-//    }
+    public function insert()
+    {
+        $data = Course::factory()->make()->toArray();
+
+        Course::create($data);
+
+        $this->assertDatabaseHas("courses" , $data);
+    }
 }

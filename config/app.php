@@ -173,6 +173,8 @@ return [
         \Modules\User\providers\UserServiceProvider::class,
         \Modules\Comment\providers\CommentServiceProvider::class,
         \Modules\Price\providers\PriceServiceProvider::class,
+        \Modules\Course\providers\CourseServiceProvider::class,
+
 
     ])->toArray(),
 
