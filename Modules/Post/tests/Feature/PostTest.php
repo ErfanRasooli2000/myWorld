@@ -4,6 +4,7 @@ namespace Modules\Post\tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\Post\Models\Post;
+use Modules\User\Models\User;
 use Tests\TestCase;
 
 class PostTest extends TestCase
@@ -21,6 +22,20 @@ class PostTest extends TestCase
 
         $this->assertDatabaseCount("posts",1);
         $this->assertDatabaseHas('posts' , $data);
+    }
+
+    /**
+     * @return void
+     * @test
+     */
+    public function postRelationshipWithUser()
+    {
+        $post = Post::factory()
+            ->for(User::factory() , 'creator')
+            ->create();
+
+        $this->assertTrue(isset($post->user->id));
+        $this->assertTrue($post->user instanceof User);
     }
 }
 

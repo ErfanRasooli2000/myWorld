@@ -4,6 +4,7 @@ namespace Modules\User\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Post\Models\Post;
 use Modules\User\Database\Factories\UserFactory;
 
 class User extends Model
@@ -24,5 +25,10 @@ class User extends Model
     public static function newFactory()
     {
         return UserFactory::new();
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 }
