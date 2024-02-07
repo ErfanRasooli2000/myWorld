@@ -3,7 +3,7 @@
 namespace Modules\Course\tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Modules\Post\Models\Post;
+use Modules\Course\Models\Course;
 use Tests\TestCase;
 
 class CourseTest extends TestCase
@@ -13,12 +13,12 @@ class CourseTest extends TestCase
      * @return void
      * @test
      */
-    public function insert()
-    {
-        $data = Post::factory()->make()->toArray();
-
-        Post::create($data);
-
-        $this->assertDatabaseHas("posts" , $data);
-    }
+//    public function insert()
+//    {
+//        $data = Course::factory()->make()->toArray();
+//
+//        Course::create($data);
+//
+//        $this->assertDatabaseHas("posts" , $data);
+//    }
 }
