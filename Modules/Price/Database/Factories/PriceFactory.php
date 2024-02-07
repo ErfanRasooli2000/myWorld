@@ -16,8 +16,11 @@ class PriceFactory extends Factory
      */
     public function definition(): array
     {
+        $price = $this->faker->numberBetween(1000000 , 10000000);
+
         return [
-            //
+            'price' => $price,
+            'discounted_price' => $price * $this->faker->numberBetween(30,70)
         ];
     }
 }
