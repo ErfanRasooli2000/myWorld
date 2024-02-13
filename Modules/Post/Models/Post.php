@@ -22,8 +22,8 @@ class Post extends Model
         return PostFactory::new();
     }
 
-    public function creator(): void
+    public function creator()
     {
-        $this->belongsTo(User::class , 'created_by');
+        return $this->belongsTo(User::class , 'created_by');
     }
 }

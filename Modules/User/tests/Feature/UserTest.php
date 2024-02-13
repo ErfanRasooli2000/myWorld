@@ -2,12 +2,14 @@
 
 namespace Modules\User\tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\Post\Models\Post;
 use Modules\User\Models\User;
 use Tests\TestCase;
 
 class UserTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * @return void
      * @test
@@ -29,10 +31,10 @@ class UserTest extends TestCase
      */
     public function userRelationshipWithPost()
     {
-        $count = round(0,10);
+        $count = rand(0,10);
 
         $user = User::factory()
-            ->hasPosts($count)
+            ->has(Post::factory()->count($count))
             ->create();
 
         $this->assertCount($count,$user->posts);

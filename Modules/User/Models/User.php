@@ -27,8 +27,8 @@ class User extends Model
         return UserFactory::new();
     }
 
-    public function posts()
+    public function posts(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Post::class , 'created_by');
     }
 }

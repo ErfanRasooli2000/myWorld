@@ -34,8 +34,8 @@ class PostTest extends TestCase
             ->for(User::factory() , 'creator')
             ->create();
 
-        $this->assertTrue(isset($post->user->id));
-        $this->assertTrue($post->user instanceof User);
+        $this->assertTrue(isset($post->creator->id));
+        $this->assertTrue($post->creator instanceof User);
     }
 }
 

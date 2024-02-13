@@ -15,6 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->text("text");
+
+//            $table->foreignIdFor(\Modules\User\Models\User::class, 'created_by')->onDelete("cascade");
+
+            $table->unsignedBigInteger("created_by");
+
+            $table->foreign("created_by")
+                ->references("id")
+                ->on("users")
+                ->onDelete("cascade");
+
             $table->timestamps();
         });
     }

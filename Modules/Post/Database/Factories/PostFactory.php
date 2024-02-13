@@ -4,6 +4,7 @@ namespace Modules\Post\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Post\Models\Post;
+use Modules\User\Models\User;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Post\Models\Post>
@@ -22,6 +23,7 @@ class PostFactory extends Factory
         return [
             "title" => $this->faker->name,
             "text" => $this->faker->realTextBetween(800,12000),
+            "created_by" => User::factory()
         ];
     }
 }

@@ -169,12 +169,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        PostServiceProvider::class,
         \Modules\User\providers\UserServiceProvider::class,
         \Modules\Comment\providers\CommentServiceProvider::class,
         \Modules\Price\providers\PriceServiceProvider::class,
         \Modules\Course\providers\CourseServiceProvider::class,
-
+        PostServiceProvider::class,
 
     ])->toArray(),
 
